@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2DFB8932-FB6A-3D2A-BEEA-3FD837E288E3}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\opencv\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include\boost-1_61;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\opencv\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include\boost-1_61;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_add_module\1_custom_post_processing.vcxproj">
+      <Project>{D23682A6-4A77-32AC-A8BB-DF294FA0A122}</Project>
+      <Name>1_custom_post_processing</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_pose\1_extract_from_image.vcxproj">
+      <Project>{9DE3D2BF-0A50-3A49-A9E0-171AC7042889}</Project>
+      <Name>1_extract_from_image</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_thread\1_openpose_read_and_display.vcxproj">
+      <Project>{11DAD24C-C7EB-3DB8-9B8B-6B3BFE2E67B1}</Project>
+      <Name>1_openpose_read_and_display</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_wrapper\1_user_synchronous_postprocessing.vcxproj">
+      <Project>{212838AE-A239-3912-AF1C-F8EB665A025C}</Project>
+      <Name>1_user_synchronous_postprocessing</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_pose\2_extract_pose_or_heatmat_from_image.vcxproj">
+      <Project>{BF291CDF-8250-3692-9270-6F1BD069246D}</Project>
+      <Name>2_extract_pose_or_heatmat_from_image</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_thread\2_user_processing_function.vcxproj">
+      <Project>{FD5975D3-332C-3EC9-B157-EE354DAA2F64}</Project>
+      <Name>2_user_processing_function</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_wrapper\2_user_synchronous_input.vcxproj">
+      <Project>{5275E3AD-CC04-31E5-9D4F-46F320AA42AD}</Project>
+      <Name>2_user_synchronous_input</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_thread\3_user_input_processing_and_output.vcxproj">
+      <Project>{6C1E85B5-8A3B-3AC4-96E7-C10B985EADBD}</Project>
+      <Name>3_user_input_processing_and_output</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_wrapper\3_user_synchronous_output.vcxproj">
+      <Project>{C23C27BE-93A8-3DEF-A6E7-D5AB41A0AE62}</Project>
+      <Name>3_user_synchronous_output</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_thread\4_user_input_processing_output_and_datum.vcxproj">
+      <Project>{DABB14B6-C108-372A-B7F5-8A4AC6325EEB}</Project>
+      <Name>4_user_input_processing_output_and_datum</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_wrapper\4_user_synchronous_all.vcxproj">
+      <Project>{2AB9FC6B-1A1A-3B2E-A808-68CD3B165002}</Project>
+      <Name>4_user_synchronous_all</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_wrapper\5_user_asynchronous.vcxproj">
+      <Project>{CB74D18E-C87F-3484-945F-E4542C5800EC}</Project>
+      <Name>5_user_asynchronous</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\tutorial_wrapper\6_user_asynchronous_output.vcxproj">
+      <Project>{A454BEC2-829C-3D12-84E1-7DD805470DEF}</Project>
+      <Name>6_user_asynchronous_output</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\examples\openpose\OpenPoseDemo.vcxproj">
+      <Project>{A3492873-3F8B-31A6-BC29-69A50CC3A5E4}</Project>
+      <Name>OpenPoseDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\openpose.vcxproj">
+      <Project>{6A7D05A0-DBB1-3816-8447-CDE0FA5D4278}</Project>
+      <Name>openpose</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

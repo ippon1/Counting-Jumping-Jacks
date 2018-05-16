@@ -1,0 +1,6 @@
+﻿  1_custom_post_processing.cpp
+D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\examples\tutorial_add_module\1_custom_post_processing.cpp(70): warning C4245: "Initialisierung": Konvertierung von "int" in "google::uint64", signed/unsigned-Konflikt.
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(588): warning C4702: Unerreichbarer Code
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(588): warning C4702: Unerreichbarer Code
+     Bibliothek "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/examples/tutorial_add_module/Release/1_custom_post_processing.lib" und Objekt "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/examples/tutorial_add_module/Release/1_custom_post_processing.exp" werden erstellt.
+  1_custom_post_processing.vcxproj -> D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\x64\Release\1_custom_post_processing.exe

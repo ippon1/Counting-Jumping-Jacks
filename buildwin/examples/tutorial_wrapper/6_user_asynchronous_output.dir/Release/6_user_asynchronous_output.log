@@ -1,0 +1,4 @@
+﻿  6_user_asynchronous_output.cpp
+D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\examples\tutorial_wrapper\6_user_asynchronous_output.cpp(60): warning C4245: "Initialisierung": Konvertierung von "int" in "google::uint64", signed/unsigned-Konflikt.
+     Bibliothek "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/examples/tutorial_wrapper/Release/6_user_asynchronous_output.lib" und Objekt "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/examples/tutorial_wrapper/Release/6_user_asynchronous_output.exp" werden erstellt.
+  6_user_asynchronous_output.vcxproj -> D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\x64\Release\6_user_asynchronous_output.exe

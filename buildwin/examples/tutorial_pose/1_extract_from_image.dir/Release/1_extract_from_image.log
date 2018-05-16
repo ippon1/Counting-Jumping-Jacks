@@ -1,0 +1,4 @@
+﻿  1_extract_from_image.cpp
+D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\examples\tutorial_pose\1_extract_from_image.cpp(123): warning C4244: "Argument": Konvertierung von "double" in "const float", möglicher Datenverlust
+     Bibliothek "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/examples/tutorial_pose/Release/1_extract_from_image.lib" und Objekt "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/examples/tutorial_pose/Release/1_extract_from_image.exp" werden erstellt.
+  1_extract_from_image.vcxproj -> D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\x64\Release\1_extract_from_image.exe

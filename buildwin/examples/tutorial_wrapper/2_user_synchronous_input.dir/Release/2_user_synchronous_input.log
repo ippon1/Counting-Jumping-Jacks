@@ -1,0 +1,4 @@
+﻿  2_user_synchronous_input.cpp
+D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\examples\tutorial_wrapper\2_user_synchronous_input.cpp(61): warning C4245: "Initialisierung": Konvertierung von "int" in "google::uint64", signed/unsigned-Konflikt.
+     Bibliothek "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/examples/tutorial_wrapper/Release/2_user_synchronous_input.lib" und Objekt "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/examples/tutorial_wrapper/Release/2_user_synchronous_input.exp" werden erstellt.
+  2_user_synchronous_input.vcxproj -> D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\x64\Release\2_user_synchronous_input.exe

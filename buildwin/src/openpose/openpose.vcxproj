@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6A7D05A0-DBB1-3816-8447-CDE0FA5D4278}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>openpose</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">openpose.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">openposed</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">openpose.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">openpose</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\opencv\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include\boost-1_61;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>OP_EXPORTS;BOOST_ALL_NO_LIB;USE_CAFFE;USE_CUDA;CMAKE_INTDIR="Debug";openpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;OP_EXPORTS;BOOST_ALL_NO_LIB;USE_CAFFE;USE_CUDA;CMAKE_INTDIR=\"Debug\";openpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\opencv\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include\boost-1_61;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\opencv\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include\boost-1_61;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib\x64\cudart_static.lib;..\..\..\3rdparty\windows\opencv\x64\vc14\lib\opencv_world310.lib;..\..\..\3rdparty\windows\caffe3rdparty\lib\gflagsd.lib;..\..\..\3rdparty\windows\caffe3rdparty\lib\glogd.lib;..\..\..\3rdparty\windows\caffe\lib\caffe.lib;..\..\..\3rdparty\windows\caffe\lib\caffeproto.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/Debug/openposed.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/$(Platform)/$(Configuration)/openposed.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\opencv\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include\boost-1_61;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Full</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>NDEBUG;OP_EXPORTS;BOOST_ALL_NO_LIB;USE_CAFFE;USE_CUDA;CMAKE_INTDIR="Release";openpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;OP_EXPORTS;BOOST_ALL_NO_LIB;USE_CAFFE;USE_CUDA;CMAKE_INTDIR=\"Release\";openpose_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\opencv\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include\boost-1_61;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\opencv\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe\include2;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include\boost-1_61;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\3rdparty\windows\caffe3rdparty\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\lib\x64\cudart_static.lib;..\..\..\3rdparty\windows\opencv\x64\vc14\lib\opencv_world310.lib;..\..\..\3rdparty\windows\caffe3rdparty\lib\gflags.lib;..\..\..\3rdparty\windows\caffe3rdparty\lib\glog.lib;..\..\..\3rdparty\windows\caffe\lib\caffe.lib;..\..\..\3rdparty\windows\caffe\lib\caffeproto.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/Release/openpose.lib</ImportLibrary>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/$(Platform)/$(Configuration)/openpose.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\experimental\tracking\pyramidalLK.cu">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/experimental/tracking/$(Configuration)/openpose_generated_pyramidalLK.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\experimental\tracking"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/experimental/tracking/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/experimental/tracking/$(Configuration)/openpose_generated_pyramidalLK.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/experimental/tracking/$(Configuration)/openpose_generated_pyramidalLK.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/experimental/tracking/openpose_generated_pyramidalLK.cu.obj.Debug.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/experimental/tracking/pyramidalLK.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\experimental\tracking\openpose_generated_pyramidalLK.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\experimental\tracking\openpose_generated_pyramidalLK.cu.obj.Debug.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\experimental\tracking\pyramidalLK.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\experimental\tracking\$(Configuration)\openpose_generated_pyramidalLK.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/experimental/tracking/$(Configuration)/openpose_generated_pyramidalLK.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\experimental\tracking"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/experimental/tracking/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/experimental/tracking/$(Configuration)/openpose_generated_pyramidalLK.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/experimental/tracking/$(Configuration)/openpose_generated_pyramidalLK.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/experimental/tracking/openpose_generated_pyramidalLK.cu.obj.Release.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/experimental/tracking/pyramidalLK.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\experimental\tracking\openpose_generated_pyramidalLK.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\experimental\tracking\openpose_generated_pyramidalLK.cu.obj.Release.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\experimental\tracking\pyramidalLK.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\experimental\tracking\$(Configuration)\openpose_generated_pyramidalLK.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\renderFace.cu">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/face/$(Configuration)/openpose_generated_renderFace.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\face"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/face/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/face/$(Configuration)/openpose_generated_renderFace.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/face/$(Configuration)/openpose_generated_renderFace.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/face/openpose_generated_renderFace.cu.obj.Debug.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/face/renderFace.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\face\openpose_generated_renderFace.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\face\openpose_generated_renderFace.cu.obj.Debug.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\renderFace.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\face\$(Configuration)\openpose_generated_renderFace.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/face/$(Configuration)/openpose_generated_renderFace.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\face"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/face/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/face/$(Configuration)/openpose_generated_renderFace.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/face/$(Configuration)/openpose_generated_renderFace.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/face/openpose_generated_renderFace.cu.obj.Release.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/face/renderFace.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\face\openpose_generated_renderFace.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\face\openpose_generated_renderFace.cu.obj.Release.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\renderFace.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\face\$(Configuration)\openpose_generated_renderFace.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\renderHand.cu">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/hand/$(Configuration)/openpose_generated_renderHand.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\hand"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/hand/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/hand/$(Configuration)/openpose_generated_renderHand.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/hand/$(Configuration)/openpose_generated_renderHand.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/hand/openpose_generated_renderHand.cu.obj.Debug.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/hand/renderHand.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\hand\openpose_generated_renderHand.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\hand\openpose_generated_renderHand.cu.obj.Debug.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\renderHand.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\hand\$(Configuration)\openpose_generated_renderHand.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/hand/$(Configuration)/openpose_generated_renderHand.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\hand"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/hand/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/hand/$(Configuration)/openpose_generated_renderHand.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/hand/$(Configuration)/openpose_generated_renderHand.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/hand/openpose_generated_renderHand.cu.obj.Release.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/hand/renderHand.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\hand\openpose_generated_renderHand.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\hand\openpose_generated_renderHand.cu.obj.Release.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\renderHand.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\hand\$(Configuration)\openpose_generated_renderHand.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\maximumBase.cu">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_maximumBase.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_maximumBase.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_maximumBase.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/openpose_generated_maximumBase.cu.obj.Debug.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/net/maximumBase.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_maximumBase.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_maximumBase.cu.obj.Debug.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\maximumBase.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\$(Configuration)\openpose_generated_maximumBase.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_maximumBase.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_maximumBase.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_maximumBase.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/openpose_generated_maximumBase.cu.obj.Release.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/net/maximumBase.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_maximumBase.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_maximumBase.cu.obj.Release.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\maximumBase.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\$(Configuration)\openpose_generated_maximumBase.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\nmsBase.cu">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_nmsBase.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_nmsBase.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_nmsBase.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/openpose_generated_nmsBase.cu.obj.Debug.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/net/nmsBase.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_nmsBase.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_nmsBase.cu.obj.Debug.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\nmsBase.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\$(Configuration)\openpose_generated_nmsBase.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_nmsBase.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_nmsBase.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_nmsBase.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/openpose_generated_nmsBase.cu.obj.Release.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/net/nmsBase.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_nmsBase.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_nmsBase.cu.obj.Release.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\nmsBase.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\$(Configuration)\openpose_generated_nmsBase.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\resizeAndMergeBase.cu">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_resizeAndMergeBase.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_resizeAndMergeBase.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_resizeAndMergeBase.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/openpose_generated_resizeAndMergeBase.cu.obj.Debug.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/net/resizeAndMergeBase.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_resizeAndMergeBase.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_resizeAndMergeBase.cu.obj.Debug.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\resizeAndMergeBase.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\$(Configuration)\openpose_generated_resizeAndMergeBase.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_resizeAndMergeBase.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_resizeAndMergeBase.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/$(Configuration)/openpose_generated_resizeAndMergeBase.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/net/openpose_generated_resizeAndMergeBase.cu.obj.Release.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/net/resizeAndMergeBase.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_resizeAndMergeBase.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\openpose_generated_resizeAndMergeBase.cu.obj.Release.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\resizeAndMergeBase.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\$(Configuration)\openpose_generated_resizeAndMergeBase.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\bodyPartConnectorBase.cu">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_bodyPartConnectorBase.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_bodyPartConnectorBase.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_bodyPartConnectorBase.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/openpose_generated_bodyPartConnectorBase.cu.obj.Debug.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/pose/bodyPartConnectorBase.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\openpose_generated_bodyPartConnectorBase.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\openpose_generated_bodyPartConnectorBase.cu.obj.Debug.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\bodyPartConnectorBase.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\$(Configuration)\openpose_generated_bodyPartConnectorBase.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_bodyPartConnectorBase.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_bodyPartConnectorBase.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_bodyPartConnectorBase.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/openpose_generated_bodyPartConnectorBase.cu.obj.Release.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/pose/bodyPartConnectorBase.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\openpose_generated_bodyPartConnectorBase.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\openpose_generated_bodyPartConnectorBase.cu.obj.Release.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\bodyPartConnectorBase.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\$(Configuration)\openpose_generated_bodyPartConnectorBase.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\renderPose.cu">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_renderPose.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_renderPose.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_renderPose.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/openpose_generated_renderPose.cu.obj.Debug.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/pose/renderPose.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\openpose_generated_renderPose.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\openpose_generated_renderPose.cu.obj.Debug.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\renderPose.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\$(Configuration)\openpose_generated_renderPose.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building NVCC (Device) object src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_renderPose.cu.obj</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd "D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose"
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -D verbose:BOOL=OFF -D "CCBIN:PATH=$(VCInstallDir)bin" -D build_configuration:STRING=$(ConfigurationName) -D "generated_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_renderPose.cu.obj" -D "generated_cubin_file:STRING=D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/$(Configuration)/openpose_generated_renderPose.cu.obj.cubin.txt" -P "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/src/openpose/CMakeFiles/openpose.dir/pose/openpose_generated_renderPose.cu.obj.Release.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/src/openpose/pose/renderPose.cu;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\openpose_generated_renderPose.cu.obj.depend;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\openpose_generated_renderPose.cu.obj.Release.cmake;D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\renderPose.cu;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\$(Configuration)\openpose_generated_renderPose.cu.obj</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\experimental\tracking\$(Configuration)\openpose_generated_pyramidalLK.cu.obj" />
+    <Object Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\face\$(Configuration)\openpose_generated_renderFace.cu.obj" />
+    <Object Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\hand\$(Configuration)\openpose_generated_renderHand.cu.obj" />
+    <Object Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\$(Configuration)\openpose_generated_maximumBase.cu.obj" />
+    <Object Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\$(Configuration)\openpose_generated_nmsBase.cu.obj" />
+    <Object Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\net\$(Configuration)\openpose_generated_resizeAndMergeBase.cu.obj" />
+    <Object Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\$(Configuration)\openpose_generated_bodyPartConnectorBase.cu.obj" />
+    <Object Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\src\openpose\CMakeFiles\openpose.dir\pose\$(Configuration)\openpose_generated_renderPose.cu.obj" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\3d\cameraParameterReader.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\3d\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/3d/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\3d\poseTriangulation.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\array.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\cvMatToOpInput.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\cvMatToOpOutput.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\datum.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/core/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\gpuRenderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\keepTopNPeople.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\keypointScaler.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\opOutputToCvMat.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\point.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\rectangle.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\renderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\core\scaleAndSizeExtractor.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\experimental\tracking\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/experimental/tracking/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\experimental\tracking\personIdExtractor.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\experimental\tracking\personTracker.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\experimental\tracking\pyramidalLK.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/face/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\faceDetector.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\faceDetectorOpenCV.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\faceExtractorCaffe.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\faceExtractorNet.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\faceCpuRenderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\faceGpuRenderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\faceRenderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\face\renderFace.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\filestream\cocoJsonSaver.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\filestream\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/filestream/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\filestream\fileSaver.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\filestream\fileStream.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\filestream\heatMapSaver.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\filestream\imageSaver.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\filestream\jsonOfstream.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\filestream\keypointSaver.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\filestream\peopleJsonSaver.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\filestream\videoSaver.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\gpu\cuda.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\gpu\gpu.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\gpu\opencl.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\gui\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/gui/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\gui\frameDisplayer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\gui\gui.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\gui\gui3D.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\gui\guiInfoAdder.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/hand/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\handDetector.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\handDetectorFromTxt.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\handExtractorCaffe.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\handExtractorNet.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\handCpuRenderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\handGpuRenderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\handRenderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\hand\renderHand.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\maximumBase.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\maximumCaffe.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\netCaffe.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\nmsBase.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\nmsBaseCL.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\nmsCaffe.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\resizeAndMergeBase.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\resizeAndMergeBaseCL.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\net\resizeAndMergeCaffe.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\bodyPartConnectorBase.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\bodyPartConnectorCaffe.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/pose/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\poseCpuRenderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\poseExtractor.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\poseExtractorCaffe.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\poseExtractorNet.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\poseGpuRenderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\poseParameters.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\poseParametersRender.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\poseRenderer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\pose\renderPose.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\producer\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/producer/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\producer\flirReader.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\producer\imageDirectoryReader.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\producer\ipCameraReader.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\producer\producer.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\producer\spinnakerWrapper.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\producer\videoCaptureReader.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\producer\videoReader.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\producer\webcamReader.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\thread\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/thread/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\utilities\errorAndLog.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\utilities\fileSystem.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\utilities\flagsToOpenPose.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\utilities\keypoint.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\utilities\openCv.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\utilities\profiler.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\utilities\string.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\wrapper\defineTemplates.cpp">
+      <ObjectFileName>$(IntDir)/wrapper/defineTemplates.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\wrapper\wrapperAuxiliary.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\wrapper\wrapperStructFace.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\wrapper\wrapperStructHand.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\wrapper\wrapperStructInput.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\wrapper\wrapperStructOutput.cpp" />
+    <ClCompile Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\src\openpose\wrapper\wrapperStructPose.cpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\3d\cameraParameterReader.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\3d\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\3d\poseTriangulation.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\3d\wPoseTriangulation.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\array.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\common.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\cvMatToOpInput.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\cvMatToOpOutput.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\datum.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\enumClasses.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\gpuRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\keepTopNPeople.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\keypointScaler.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\macros.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\opOutputToCvMat.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\point.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\rectangle.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\renderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\scaleAndSizeExtractor.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\wCvMatToOpInput.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\wCvMatToOpOutput.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\wKeepTopNPeople.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\wKeypointScaler.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\wOpOutputToCvMat.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\core\wScaleAndSizeExtractor.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\faceCpuRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\faceDetector.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\faceDetectorOpenCV.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\faceExtractorCaffe.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\faceExtractorNet.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\faceGpuRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\faceParameters.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\faceRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\renderFace.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\wFaceDetector.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\wFaceDetectorOpenCV.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\wFaceExtractorNet.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\face\wFaceRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\cocoJsonSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\enumClasses.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\fileSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\fileStream.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\heatMapSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\imageSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\jsonOfstream.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\keypointSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\peopleJsonSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\videoSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\wCocoJsonSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\wFaceSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\wHandSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\wHeatMapSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\wImageSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\wPeopleJsonSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\wPoseSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\filestream\wVideoSaver.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gpu\cl2.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gpu\cuda.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gpu\enumClasses.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gpu\gpu.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gpu\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gui\enumClasses.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gui\frameDisplayer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gui\gui.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gui\gui3D.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gui\guiInfoAdder.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gui\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gui\wGui.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gui\wGui3D.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gui\wGuiInfoAdder.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\handCpuRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\handDetector.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\handDetectorFromTxt.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\handExtractorCaffe.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\handExtractorNet.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\handGpuRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\handParameters.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\handRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\renderHand.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\wHandDetector.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\wHandDetectorFromTxt.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\wHandDetectorTracking.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\wHandDetectorUpdate.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\wHandExtractorNet.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\hand\wHandRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\net\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\net\maximumBase.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\net\maximumCaffe.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\net\net.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\net\netCaffe.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\net\nmsBase.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\net\nmsCaffe.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\net\resizeAndMergeBase.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\net\resizeAndMergeCaffe.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\bodyPartConnectorBase.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\bodyPartConnectorCaffe.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\enumClasses.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\poseCpuRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\poseExtractor.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\poseExtractorCaffe.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\poseExtractorNet.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\poseGpuRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\poseParameters.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\poseParametersRender.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\poseRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\renderPose.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\wPoseExtractor.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\wPoseExtractorNet.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\pose\wPoseRenderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\datumProducer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\enumClasses.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\flirReader.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\imageDirectoryReader.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\ipCameraReader.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\producer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\spinnakerWrapper.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\videoCaptureReader.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\videoReader.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\wDatumProducer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\producer\webcamReader.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\enumClasses.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\priorityQueue.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\queue.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\queueBase.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\subThread.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\subThreadNoQueue.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\subThreadQueueIn.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\subThreadQueueInOut.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\subThreadQueueOut.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\thread.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\threadManager.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\wIdGenerator.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\wQueueOrderer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\worker.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\workerConsumer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\thread\workerProducer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\check.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\enumClasses.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\errorAndLog.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\fastMath.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\fileSystem.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\flagsToOpenPose.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\keypoint.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\openCv.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\pointerContainer.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\profiler.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\standard.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\string.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\wrapper\headers.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\wrapper\wrapper.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\wrapper\wrapperAuxiliary.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\wrapper\wrapperStructFace.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\wrapper\wrapperStructHand.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\wrapper\wrapperStructInput.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\wrapper\wrapperStructOutput.hpp" />
+    <ClInclude Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\wrapper\wrapperStructPose.hpp" />
+    <None Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\gpu\cuda.hu" />
+    <None Include="D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\include\openpose\utilities\render.hu" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
