@@ -110,7 +110,6 @@ distribute/
 *.bin
 *.testbin
 build
-build*
 .build*
 *cmake_build
 distribute/*

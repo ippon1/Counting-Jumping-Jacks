@@ -1,5 +1,6 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (HAoHM.dir\Release\) contains files shared from another project (3_user_synchronous_output.vcxproj, 3_user_synchronous_output.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   VAoHM.cpp
-VAoHM.cpp(67): warning C4245: "Initialisierung": Konvertierung von "int" in "google::uint64", signed/unsigned-Konflikt.
+VAoHM.cpp(69): warning C4245: "Initialisierung": Konvertierung von "int" in "google::uint64", signed/unsigned-Konflikt.
+VAoHM.cpp(403): warning C4244: "Argument": Konvertierung von "float" in "int", möglicher Datenverlust
      Bibliothek "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/examples/tutorial_wrapper/Release/3_user_synchronous_output.lib" und Objekt "D:/Michael/Documents/UNI/TU Wien/8.Semester/UE Visual Analysis of Human Motion/openpose/buildwin/examples/tutorial_wrapper/Release/3_user_synchronous_output.exp" werden erstellt.
   HAoHM.vcxproj -> D:\Michael\Documents\UNI\TU Wien\8.Semester\UE Visual Analysis of Human Motion\openpose\buildwin\x64\Release\HAoHM.exe

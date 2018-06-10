@@ -1,22 +1,15 @@
-// Michael
+/*
+README:
+Change the following flags to process your own video:
+- video // Path to your video to process
+- video_output // Path to the output location
+- aspect_ratio_rotate // Write here 0 for landscape videos and 90 for portrait videos
 
-// ------------------------- OpenPose Library Tutorial - Real Time Pose Estimation -------------------------
-// If the user wants to learn to use the OpenPose library, we highly recommend to start with the `examples/tutorial_*/`
-// folders.
-// This example summarizes all the funcitonality of the OpenPose library:
-    // 1. Read folder of images / video / webcam  (`producer` module)
-    // 2. Extract and render body keypoint / heatmap / PAF of that image (`pose` module)
-    // 3. Extract and render face keypoint / heatmap / PAF of that image (`face` module)
-    // 4. Save the results on disk (`filestream` module)
-    // 5. Display the rendered pose (`gui` module)
-    // Everything in a multi-thread scenario (`thread` module)
-    // Points 2 to 5 are included in the `wrapper` module
-// In addition to the previous OpenPose modules, we also need to use:
-    // 1. `core` module:
-        // For the Array<float> class that the `pose` module needs
-        // For the Datum struct that the `thread` module sends between the queues
-    // 2. `utilities` module: for the error & logging functions, i.e. op::error & op::log respectively
-// This file should only be used for the user to take specific examples.
+Our code is based on the example 3_user_synchronous_output.
+You find our extended code for the classifier and video export on line 245-406 and 572-581.
+*/
+
+
 
 // C++ std library dependencies
 #include <chrono> // `std::chrono::` functions and classes, e.g. std::chrono::milliseconds
@@ -34,10 +27,7 @@
 #include <iostream>
 #include <windows.h>
 
-// See all the available parameter options withe the `--help` flag. E.g. `build/examples/openpose/openpose.bin --help`
-// Note: This command will show you flags for other unnecessary 3rdparty files. Check only the flags for the OpenPose
-// executable. E.g. for `openpose.bin`, look for `Flags from examples/openpose/openpose.cpp:`.
-// Debugging/Other
+
 DEFINE_int32(logging_level,             3,              "The logging level. Integer in the range [0, 255]. 0 will output any log() message, while"
                                                         " 255 will not output any. Current OpenPose library messages are in the range 0-4: 1 for"
                                                         " low priority messages and 4 for important ones.");
@@ -55,9 +45,11 @@ DEFINE_string(camera_resolution,        "-1x-1",        "Set the camera resoluti
                                                         " `--flir_camera`");
 DEFINE_double(camera_fps,               30.0,           "Frame rate for the webcam (also used when saving video). Set this value to the minimum"
                                                         " value between the OpenPose displayed speed and the webcam real frame rate.");
-DEFINE_string(video,                    "examples/media/20180516_141722.mp4",             "Use a video file instead of the camera. Use `examples/media/video.avi` for our default  "
+DEFINE_string(video,                    "examples/media/resized/cutted/IMG_5852.mp4",             "Use a video file instead of the camera. Use `examples/media/video.avi` for our default  "
                                                         " example video.");
-DEFINE_string(video_output, "examples/media/20180516_141722_write.mp4", "");
+DEFINE_string(video_output, "examples/media/export/IMG_5852.mp4", "");
+DEFINE_int32(aspect_ratio_rotate, 90, "Rotate each frame, 4 possible values: 0, 90, 180, 270.");
+DEFINE_int32(frame_rotate, 0, "Rotate each frame, 4 possible values: 0, 90, 180, 270.");
 DEFINE_string(image_dir,                "",             "Process a directory of images. Use `examples/media/` for our default example folder with 20"
                                                         " images. Read all standard formats (jpg, png, bmp, etc.).");
 DEFINE_bool(flir_camera,                false,          "Whether to use FLIR (Point-Grey) stereo camera.");
@@ -66,7 +58,6 @@ DEFINE_uint64(frame_first,              0,              "Start on desired frame 
 DEFINE_uint64(frame_last,               -1,             "Finish on desired frame number. Select -1 to disable. Indexes are 0-based, e.g. if set to"
                                                         " 10, it will process 11 frames (0-10).");
 DEFINE_bool(frame_flip,                 false,          "Flip/mirror each frame (e.g. for real time webcam demonstrations).");
-DEFINE_int32(frame_rotate,              270,              "Rotate each frame, 4 possible values: 0, 90, 180, 270.");
 DEFINE_bool(frames_repeat,              false,          "Repeat frames when finished.");
 DEFINE_bool(process_real_time,          false,          "Enable to keep the original source frame rate (e.g. for video). If the processing time is"
                                                         " too long, it will skip frames. If it is too fast, it will slow it down.");
@@ -228,6 +219,8 @@ using namespace cv;
 VideoWriter outputVideo;
 string filename;
 
+Size outputsize = FLAGS_aspect_ratio_rotate == 0 ? Size(640, 360) : Size(360, 640);
+
 // If the user needs his own variables, he can inherit the op::Datum struct and add them
 // UserDatum can be directly used by the OpenPose wrapper because it inherits from op::Datum, just define
 // Wrapper<UserDatum> instead of Wrapper<op::Datum>
@@ -248,7 +241,17 @@ struct UserDatum : public op::Datum
 class WUserOutput : public op::WorkerConsumer<std::shared_ptr<std::vector<UserDatum>>>
 {
 public:
-    void initializationOnThread() {}
+
+	const static int maxPersons = 2;
+	bool warOben[maxPersons];
+	int hampelmannCount[maxPersons];
+
+    void initializationOnThread() {
+		for (int i = 0; i < maxPersons; i++) {
+			warOben[i] = false;
+			hampelmannCount[i] = 0;
+		}
+	}
 
 
 	string bodypartname[18] = {	"0 Nase",
@@ -271,8 +274,8 @@ public:
 								"17 Linkes Ohr" 
 	};
 
-	bool warOben = false;
-	int hampelmannCount = 0;
+	float personmapping[maxPersons];
+	int personmappingi[maxPersons];
 
     void workConsumer(const std::shared_ptr<std::vector<UserDatum>>& datumsPtr)
     {
@@ -287,124 +290,116 @@ public:
 
 				const auto& poseKeypoints = datumsPtr->at(0).poseKeypoints;
 
-				/*
-                // Show in command line the resulting pose keypoints for body, face and hands
-                op::log("\nKeypoints:");
-                // Accesing each element of the keypoints
-                op::log("Person pose keypoints:");
-                for (auto person = 0 ; person < poseKeypoints.getSize(0) ; person++)
-                {
-                    op::log("Person " + std::to_string(person) + " (x, y, score):");
-                    for (auto bodyPart = 0 ; bodyPart < poseKeypoints.getSize(1) ; bodyPart++)
-                    {
-                        std::string valueToPrint;
-						valueToPrint += "Bodypart: "+ to_string(bodyPart)+" ";
-                        for (auto xyscore = 0 ; xyscore < poseKeypoints.getSize(2) ; xyscore++)
-                        {
-                            valueToPrint += std::to_string(   poseKeypoints[{person, bodyPart, xyscore}]   ) + " ";
-                        }
-						valueToPrint += bodypartname[bodyPart];
-                        op::log(valueToPrint);
-                    }
-
-                }
-				*/
 
 
-				/*
-				op::log(" ");
-				// Alternative: just getting std::string equivalent
-				op::log("Face keypoints: " + datumsPtr->at(0).faceKeypoints.toString());
-				op::log("Left hand keypoints: " + datumsPtr->at(0).handKeypoints[0].toString());
-				op::log("Right hand keypoints: " + datumsPtr->at(0).handKeypoints[1].toString());
-				// Heatmaps
-				const auto& poseHeatMaps = datumsPtr->at(0).poseHeatMaps;
-				if (!poseHeatMaps.empty())
-				{
-				op::log("Pose heatmaps size: [" + std::to_string(poseHeatMaps.getSize(0)) + ", "
-				+ std::to_string(poseHeatMaps.getSize(1)) + ", "
-				+ std::to_string(poseHeatMaps.getSize(2)) + "]");
-				const auto& faceHeatMaps = datumsPtr->at(0).faceHeatMaps;
-				op::log("Face heatmaps size: [" + std::to_string(faceHeatMaps.getSize(0)) + ", "
-				+ std::to_string(faceHeatMaps.getSize(1)) + ", "
-				+ std::to_string(faceHeatMaps.getSize(2)) + ", "
-				+ std::to_string(faceHeatMaps.getSize(3)) + "]");
-				const auto& handHeatMaps = datumsPtr->at(0).handHeatMaps;
-				op::log("Left hand heatmaps size: [" + std::to_string(handHeatMaps[0].getSize(0)) + ", "
-				+ std::to_string(handHeatMaps[0].getSize(1)) + ", "
-				+ std::to_string(handHeatMaps[0].getSize(2)) + ", "
-				+ std::to_string(handHeatMaps[0].getSize(3)) + "]");
-				op::log("Right hand heatmaps size: [" + std::to_string(handHeatMaps[1].getSize(0)) + ", "
-				+ std::to_string(handHeatMaps[1].getSize(1)) + ", "
-				+ std::to_string(handHeatMaps[1].getSize(2)) + ", "
-				+ std::to_string(handHeatMaps[1].getSize(3)) + "]");
+
+				for (int i = 0; i < maxPersons; i++) {
+					personmapping[i] = 100000.0;
+					personmappingi[i] = 0;
 				}
-				*/
 
-
-				auto person = 0;
-
-				Point2f nase(poseKeypoints[{person, 0, 0}], poseKeypoints[{person, 0, 1}]);
-				Point2f brust(poseKeypoints[{person, 1, 0}], poseKeypoints[{person, 1, 1}]);
-				Point2f rechteSchulter(poseKeypoints[{person, 2, 0}], poseKeypoints[{person, 2, 1}]);
-				Point2f rechterEllbogen(poseKeypoints[{person, 3, 0}], poseKeypoints[{person, 3, 1}]);
-				Point2f rechtesHandgelenk(poseKeypoints[{person, 4, 0}], poseKeypoints[{person, 4, 1}]);
-				Point2f linkeSchulter(poseKeypoints[{person, 5, 0}], poseKeypoints[{person, 5, 1}]);
-				Point2f linkerEllbogen(poseKeypoints[{person, 6, 0}], poseKeypoints[{person, 6, 1}]);
-				Point2f linkesHandgelenk(poseKeypoints[{person, 7, 0}], poseKeypoints[{person, 7, 1}]);
-				Point2f rechteHuefte(poseKeypoints[{person, 8, 0}], poseKeypoints[{person, 8, 1}]);
-				Point2f rechtesKnie(poseKeypoints[{person, 9, 0}], poseKeypoints[{person, 9, 1}]);
-				Point2f rechterKnoechel(poseKeypoints[{person, 10, 0}], poseKeypoints[{person, 10, 1}]);
-				Point2f linkeHuefte(poseKeypoints[{person, 11, 0}], poseKeypoints[{person, 11, 1}]);
-				Point2f linkesKnie(poseKeypoints[{person, 12, 0}], poseKeypoints[{person, 12, 1}]);
-				Point2f linkerKnoechel(poseKeypoints[{person, 13, 0}], poseKeypoints[{person, 13, 1}]);
-				Point2f rechtesAuge(poseKeypoints[{person, 14, 0}], poseKeypoints[{person, 14, 1}]);
-				Point2f linkesAuge(poseKeypoints[{person, 15, 0}], poseKeypoints[{person, 15, 1}]);
-				Point2f rechtesOhr(poseKeypoints[{person, 16, 0}], poseKeypoints[{person, 16, 1}]);
-				Point2f linkesOhr(poseKeypoints[{person, 17, 0}], poseKeypoints[{person, 17, 1}]);
-
-				// Position unten
-				if(
-					abs(linkesHandgelenk.x - rechtesHandgelenk.x) <= 2 * abs(linkeSchulter.x - rechteSchulter.x) &&
-					linkesHandgelenk.y > brust.y && 
-					rechtesHandgelenk.y > brust.y && 
-					abs(linkerKnoechel.x - rechterKnoechel.x) <= 1 * abs(linkeSchulter.x - rechteSchulter.x)
-					) {
-					//op::log("###########  UNTEN  ##########");
-					if (warOben) {
-						hampelmannCount++;
-						warOben = false;
-						op::log("Anzahl Hampelmann: " + to_string(hampelmannCount));
+				float min = 0.0;
+				for (int i = 0; i < maxPersons; i++) {
+					for (int person = 0; person < maxPersons && person < poseKeypoints.getSize(0); person++) {
+						Point2f brust(poseKeypoints[{person, 1, 0}], poseKeypoints[{person, 1, 1}]);
+						if (brust.x > min && brust.x < personmapping[i]) {
+							cout << "i:" << i << " person:" << person << " brust.x:" << brust.x << endl;
+							personmapping[i] = brust.x;
+							personmappingi[i] = person;
+						}
 					}
+					cout << "personmappingi[" << i << "]:" << personmappingi[i] << endl;
+					min = personmapping[i];
 				}
 
-				// Position oben
-				if (
-					abs(linkesHandgelenk.x - rechtesHandgelenk.x) <= 1 * abs(linkeSchulter.x - rechteSchulter.x) &&
-					linkesHandgelenk.y < nase.y &&
-					rechtesHandgelenk.y < nase.y &&
-					abs(linkerKnoechel.x - rechterKnoechel.x) > 1 * abs(linkeSchulter.x - rechteSchulter.x)
-					) {
-					//op::log("###########  OBEN  ##########");
-					warOben = true;
-				}
+				cout << "personmappingi" << endl;
+				cout << personmappingi[0] << " " << personmappingi[1] << endl;
 
-                // Display rendered output image
+
+
+				// Display rendered output image
 				cv::Mat image = datumsPtr->at(0).cvOutputData;
 
-				string text = to_string(hampelmannCount);
-				int fontFace = FONT_HERSHEY_SIMPLEX;
-				double fontScale = 10;
-				int thickness = 3;
-				Point textOrg(10, 260);
-				putText(image, text, textOrg, fontFace, fontScale, Scalar::all(255), thickness, 8);
+				for (int person = 0; person < poseKeypoints.getSize(0) && person < maxPersons; person++)
+				{
 
-				Size size(360, 640);
+					Point2f nase(poseKeypoints[{person, 0, 0}], poseKeypoints[{person, 0, 1}]);
+					Point2f brust(poseKeypoints[{person, 1, 0}], poseKeypoints[{person, 1, 1}]);
+					Point2f rechteSchulter(poseKeypoints[{person, 2, 0}], poseKeypoints[{person, 2, 1}]);
+					Point2f rechterEllbogen(poseKeypoints[{person, 3, 0}], poseKeypoints[{person, 3, 1}]);
+					Point2f rechtesHandgelenk(poseKeypoints[{person, 4, 0}], poseKeypoints[{person, 4, 1}]);
+					Point2f linkeSchulter(poseKeypoints[{person, 5, 0}], poseKeypoints[{person, 5, 1}]);
+					Point2f linkerEllbogen(poseKeypoints[{person, 6, 0}], poseKeypoints[{person, 6, 1}]);
+					Point2f linkesHandgelenk(poseKeypoints[{person, 7, 0}], poseKeypoints[{person, 7, 1}]);
+					Point2f rechteHuefte(poseKeypoints[{person, 8, 0}], poseKeypoints[{person, 8, 1}]);
+					Point2f rechtesKnie(poseKeypoints[{person, 9, 0}], poseKeypoints[{person, 9, 1}]);
+					Point2f rechterKnoechel(poseKeypoints[{person, 10, 0}], poseKeypoints[{person, 10, 1}]);
+					Point2f linkeHuefte(poseKeypoints[{person, 11, 0}], poseKeypoints[{person, 11, 1}]);
+					Point2f linkesKnie(poseKeypoints[{person, 12, 0}], poseKeypoints[{person, 12, 1}]);
+					Point2f linkerKnoechel(poseKeypoints[{person, 13, 0}], poseKeypoints[{person, 13, 1}]);
+					Point2f rechtesAuge(poseKeypoints[{person, 14, 0}], poseKeypoints[{person, 14, 1}]);
+					Point2f linkesAuge(poseKeypoints[{person, 15, 0}], poseKeypoints[{person, 15, 1}]);
+					Point2f rechtesOhr(poseKeypoints[{person, 16, 0}], poseKeypoints[{person, 16, 1}]);
+					Point2f linkesOhr(poseKeypoints[{person, 17, 0}], poseKeypoints[{person, 17, 1}]);
+
+					// Position unten
+					if (
+						abs(linkesHandgelenk.x - rechtesHandgelenk.x) <= 2 * abs(linkeSchulter.x - rechteSchulter.x) &&
+						linkesHandgelenk.y > brust.y &&
+						rechtesHandgelenk.y > brust.y &&
+						abs(linkerKnoechel.x - rechterKnoechel.x) <= 1 * abs(linkeSchulter.x - rechteSchulter.x)
+						) {
+						//op::log("###########  UNTEN  ##########");
+						if (warOben[personmappingi[person]]) {
+							hampelmannCount[personmappingi[person]]++;
+							warOben[personmappingi[person]] = false;
+							op::log("Anzahl Hampelmann: " + to_string(hampelmannCount[personmappingi[person]]));
+						}
+					}
+
+					// Position oben
+					if (
+						abs(linkesHandgelenk.x - rechtesHandgelenk.x) <= 2 * abs(linkeSchulter.x - rechteSchulter.x) &&
+						linkesHandgelenk.y < nase.y &&
+						rechtesHandgelenk.y < nase.y &&
+						abs(linkerKnoechel.x - rechterKnoechel.x) > 1 * abs(linkeSchulter.x - rechteSchulter.x)
+						) {
+						//op::log("###########  OBEN  ##########");
+						warOben[personmappingi[person]] = true;
+					}
+
+					string text = to_string(hampelmannCount[personmappingi[person]]);
+					int fontFace = FONT_HERSHEY_SIMPLEX;
+					double fontScale = 2;
+					int thickness = 3;
+					Point textOrg(10, 60 + personmappingi[person] * 110);
+					//Point textOrg(10 + person * 560 - (person > 0 && hampelmannCount[person] >= 10 ? 60 : 0), 80);
+					//Point textOrg(10, 260);
+					putText(image, text, textOrg, fontFace, fontScale, Scalar::all(255), thickness, 8);
+
+
+					text = "P" + to_string(personmappingi[person] + 1);
+					fontScale = 1;
+					thickness = 3;
+					Point textPersonCounterOrg(10, 95 + personmappingi[person] * 110);
+					//Point textPersonCounterOrg(20 + person * 560 - (person > 0 && hampelmannCount[person] >= 10 ? 60 : 0), 120);
+
+					putText(image, text, textPersonCounterOrg, fontFace, fontScale, Scalar::all(255), thickness, 8);
+
+
+					text = "P"+to_string(personmappingi[person] +1);
+					fontScale = 1;
+					thickness = 3;
+					Point textPersonOrg(brust.x-20, brust.y+30);
+
+					putText(image, text, textPersonOrg, fontFace, fontScale, Scalar::all(255), thickness, 8);
+				}
+
 				cv::Mat imageResized;
-				resize(image, imageResized, size);
+				resize(image, imageResized, outputsize);
 
 
-				outputVideo.write(image);
+				outputVideo.write(imageResized);
 
                 cv::imshow("User worker GUI", imageResized);
                 // Display image and sleeps at least 1 ms (it usually sleeps ~5-10 msec to display the image)
@@ -413,13 +408,6 @@ public:
 					this->stop();
 
 
-				//this->stop();
-
-				/*
-				cout << "Wait, enter to continue:";
-				string sdf;
-				cin >> sdf;
-				*/
             }
         }
         catch (const std::exception& e)
@@ -432,21 +420,6 @@ public:
 
 int openPoseDemo()
 {
-	/*
-	VideoCapture inputVideo(FLAGS_video);
-	if (!inputVideo.isOpened())
-	{
-		cout << "Could not open the input video: " << FLAGS_video << endl;
-		return -1;
-	}
-	*/
-
-
-	
-
-	
-	
-
 
     // logging_level
     op::check(0 <= FLAGS_logging_level && FLAGS_logging_level <= 255, "Wrong logging_level value.",
@@ -599,37 +572,13 @@ int main(int argc, char *argv[])
 	int ex = CV_FOURCC('H', '2', '6', '4');// static_cast<int>(inputVideo.get(CV_CAP_PROP_FOURCC));
 	double fps = 29.948;// inputVideo.get(CV_CAP_PROP_FPS); // framerate of the created video stream
 
-	outputVideo.open(FLAGS_video_output, ex, fps, Size(1080, 1920), true);
+	outputVideo.open(FLAGS_video_output, ex, fps, outputsize, true);
 	if (!outputVideo.isOpened())
 	{
 		cout << "Could not open the output video for write: " << endl;
 		cin >> ex;
 		return -1;
 	}
-
-	/*
-	char filenameChar[MAX_PATH];
-
-	OPENFILENAME ofn;
-	ZeroMemory(&filenameChar, sizeof(filenameChar));
-	ZeroMemory(&ofn, sizeof(ofn));
-	ofn.lStructSize = sizeof(ofn);
-	ofn.hwndOwner = NULL;  // If you have a window to center over, put its HANDLE here
-	ofn.lpstrFilter = "Text Files\0*.mp4\0Any File\0*.*\0";
-	ofn.lpstrFile = filenameChar;
-	ofn.nMaxFile = MAX_PATH;
-	ofn.lpstrTitle = "Select a Video!";
-	ofn.Flags = OFN_DONTADDTORECENT | OFN_FILEMUSTEXIST;
-
-	if (GetOpenFileNameA(&ofn))
-	{
-		std::cout << "You chose the file \"" << filenameChar << "\"\n";
-		//filename = string(filenameChar);
-	}
-	else {
-		return -1;
-	}
-	*/
 
 
     // Parsing command line flags
