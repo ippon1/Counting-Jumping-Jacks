@@ -1,8 +1,7 @@
 # Counting Jumping Jacks
 469 Visual Analysis of Human Motion
 https://tiss.tuwien.ac.at/course/courseDetails.xhtml?dswid=9006&dsrid=585&courseNr=188469&semester=2020S
-
-
+https://www.youtube.com/watch?v=Mg5C9wuCo4s
 
 
 
